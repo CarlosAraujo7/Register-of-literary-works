@@ -1,0 +1,112 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-family: 'Kalam', cursive; /* Adicionando a fonte 'Kalam' ao título */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Adicionando uma sombra sutil ao texto */
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.updateButton, .deleteButton {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.updateButton {
+    background-color: #5bc0de; /* Bootstrap's info color */
+    color: white;
+}
+
+.updateButton:hover {
+    background-color: #46b8da; /* Slightly darker color on hover */
+}
+
+.deleteButton {
+    background-color: #d9534f; /* Bootstrap's danger color */
+    color: white;
+}
+
+.deleteButton:hover {
+    background-color: #c9302c; /* Slightly darker color on hover */
+}
+
+#mangaCounter {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#mangaList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Aumentando a distância entre os itens */
+}
+
+.mangaItem {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px; /* Tamanho padronizado da capa */
+    text-align: center;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.mangaItem:hover {
+    background-color: #f5f5f5;
+}
+
+.mangaImage {
+    width: 100%;
+    height: 450px; /* Altura fixa para forçar tamanho igual */
+    object-fit: cover; /* Para cobrir completamente o container mantendo as proporções */
+    cursor: pointer;
+}
+
+.mangaText {
+    text-align: left;
+    padding: 20px; /* Aumentando a distância entre os textos */
+    font-size: 16px;
+}
+
+.mangaItem.read {
+    background-color: #f0f8ff; /* LightBlue - change this color as needed */
+}

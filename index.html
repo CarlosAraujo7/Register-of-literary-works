@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap"> <!-- Link da fonte 'Kalam' -->
+    <title>Organizar a Leitura</title>
+</head>
+<body>
+
+    <h1>Site para acompanhar as obras lidas no momento</h1>
+
+    <form id="mangaForm">
+        <label for="mangaName">Manga/Manhwa</label>
+        <input type="text" id="mangaName" placeholder="Insira o nome do Mangá/Manhwa" required>
+
+        <label for="currentChapter">Capítulo Atual</label>
+        <input type="number" id="currentChapter" placeholder="Insira o capítulo atual" required>
+
+        <label for="coverLink">Link da Capa (opcional)</label>
+        <input type="text" id="coverLink" placeholder="Insira o link da capa">
+
+        <button type="button" onclick="addManga()">Adicionar Manga/Manhwa</button>
+    </form>
+
+    <div id="mangaCounter"></div>
+
+    <ul id="mangaList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
