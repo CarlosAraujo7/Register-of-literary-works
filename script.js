@@ -15,7 +15,8 @@ function addManga() {
             chapter: currentChapter,
             cover: coverLink,
             lastModified: new Date().toLocaleString(),
-            siteToRead: siteToRead
+            siteToRead: siteToRead,
+            read: false
         };
 
         mangaList.push(manga);
@@ -23,7 +24,13 @@ function addManga() {
         updateMangaList();
         resetForm();
         saveToLocalStorage();
+
+        alert("Mangá/Manhwa cadastrado com sucesso!");
+    
+    } else {
+        alert("Insira um nome e um capítulo válido.");
     }
+    
 }
 
 function updateMangaList() {
