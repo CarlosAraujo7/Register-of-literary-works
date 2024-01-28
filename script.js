@@ -1,10 +1,11 @@
-let mangaList = [];
-let mangaCounter = 0;
+let mangaList = JSON.parse(localStorage.getItem('mangaList')) || [];
+let mangaCounter = mangaList.length;
 
 function addManga() {
     const mangaName = document.getElementById("mangaName").value;
     const currentChapter = document.getElementById("currentChapter").value;
     const coverLink = document.getElementById("coverLink").value;
+    const siteToRead = document.getElementById("readLinks").value.trim();
 
     if (mangaName && currentChapter) {
         mangaCounter++;
@@ -13,13 +14,15 @@ function addManga() {
             name: mangaName,
             chapter: currentChapter,
             cover: coverLink,
-            lastModified: new Date().toLocaleString() // Adicionando a data da última modificação
+            lastModified: new Date().toLocaleString(),
+            siteToRead: siteToRead
         };
 
         mangaList.push(manga);
 
         updateMangaList();
         resetForm();
+        saveToLocalStorage();
     }
 }
 
@@ -36,7 +39,7 @@ function updateMangaList() {
         mangaItem.className = `mangaItem ${manga.read ? "read" : ""}`;
 
         const mangaImage = document.createElement("img");
-        mangaImage.src = manga.cover || "https://via.placeholder.com/300"; // Imagem de capa padrão caso não seja fornecido um link
+        mangaImage.src = manga.cover || "https://via.placeholder.com/300";
         mangaImage.alt = manga.name;
         mangaImage.className = "mangaImage";
         mangaImage.onclick = () => updateReadStatus(index);
@@ -47,8 +50,12 @@ function updateMangaList() {
             <strong>${manga.name}</strong><br>
             <span>Capítulo Atual: ${manga.chapter}</span><br>
             <span>Data da última modificação: ${manga.lastModified}</span><br>
-            <button class="updateButton" onclick="updateChapter(${index})">Atualizar Capítulo</button>
-            <button class="deleteButton" onclick="deleteManga(${index})">Apagar</button>
+            <button class="mangaButton updateButton" onclick="updateChapter(${index})">Atualizar Capítulo</button>
+            <div class="buttonContainer">
+                <button class="mangaButton editButton" onclick="editSiteToRead(${index})">Editar Link da Obra</button>
+                <button class="mangaButton readButton" onclick="redirectToSite(${index})">Ler</button>
+            </div>
+            <button class="mangaButton deleteButton" onclick="deleteManga(${index})">Apagar</button>
         `;
 
         mangaItem.appendChild(mangaImage);
@@ -60,14 +67,36 @@ function updateMangaList() {
 function updateReadStatus(index) {
     mangaList[index].read = !mangaList[index].read;
     updateMangaList();
+    saveToLocalStorage();
 }
 
 function updateChapter(index) {
     const newChapter = prompt("Insira o novo capítulo:");
     if (newChapter !== null && !isNaN(newChapter)) {
         mangaList[index].chapter = newChapter;
-        mangaList[index].lastModified = new Date().toLocaleString(); // Atualizando a data da última modificação
+        mangaList[index].lastModified = new Date().toLocaleString();
         updateMangaList();
+        saveToLocalStorage();
+    }
+}
+
+function editSiteToRead(index) {
+    const currentSiteToRead = mangaList[index].siteToRead;
+    const newSiteToRead = prompt("Insira o novo link para leitura:", currentSiteToRead);
+
+    if (newSiteToRead !== null) {
+        mangaList[index].siteToRead = newSiteToRead.trim();
+        updateMangaList();
+        saveToLocalStorage();
+    }
+}
+
+function redirectToSite(index) {
+    const siteToRead = mangaList[index].siteToRead;
+    if (siteToRead) {
+        window.open(siteToRead, '_blank');
+    } else {
+        alert("Nenhum link de leitura cadastrado para esta obra.");
     }
 }
 
@@ -76,9 +105,19 @@ function deleteManga(index) {
     if (confirmDelete) {
         mangaList.splice(index, 1);
         updateMangaList();
+        saveToLocalStorage();
     }
 }
 
 function resetForm() {
     document.getElementById("mangaForm").reset();
 }
+
+function saveToLocalStorage() {
+    localStorage.setItem('mangaList', JSON.stringify(mangaList));
+}
+
+// Carregar dados do Local Storage ao carregar a página
+window.onload = function () {
+    updateMangaList();
+};

@@ -1,19 +1,36 @@
+/* Reset de margem padrão e seleção da fonte principal */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 20px;
+    padding: 0;
+    background-color: #f7f7f7;
 }
 
+/* Estilo do título principal */
 h1 {
     text-align: center;
     color: #333;
-    font-family: 'Kalam', cursive; /* Adicionando a fonte 'Kalam' ao título */
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); /* Adicionando uma sombra sutil ao texto */
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo do formulário de entrada */
 form {
     margin-bottom: 20px;
+    max-width: 750px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
+.form:hover {
+    transform: scale(1.02);
+}
+
+/* Estilo das etiquetas dos campos de entrada */
 label {
     display: block;
     margin-bottom: 8px;
@@ -21,6 +38,7 @@ label {
     color: #555;
 }
 
+/* Estilo padrão para campos de entrada de texto */
 input, textarea {
     width: 100%;
     padding: 12px;
@@ -31,82 +49,98 @@ input, textarea {
     border-radius: 5px;
 }
 
+/* Estilo do botão padrão */
 button {
+    background-color: #9f9f9f;
     padding: 12px 20px;
     border: none;
     cursor: pointer;
     margin-right: 5px;
     border-radius: 5px;
     font-size: 16px;
+    margin-top: 10px;
+    color: white;
 }
 
+/* Efeito de opacidade no hover do botão */
 button:hover {
     opacity: 0.8;
 }
 
+/* Estilos específicos para botões de atualizar e deletar */
 .updateButton, .deleteButton {
     width: 100%;
     margin-top: 10px;
 }
 
 .updateButton {
-    background-color: #5bc0de; /* Bootstrap's info color */
+    background-color: #5bc0de;
     color: white;
 }
 
 .updateButton:hover {
-    background-color: #46b8da; /* Slightly darker color on hover */
+    background-color: #46b8da;
 }
 
 .deleteButton {
-    background-color: #d9534f; /* Bootstrap's danger color */
+    background-color: #d9534f;
     color: white;
 }
 
 .deleteButton:hover {
-    background-color: #c9302c; /* Slightly darker color on hover */
+    background-color: #c9302c;
 }
 
+/* Estilo do contador de mangás */
 #mangaCounter {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #333;
 }
 
+/* Estilo da lista de mangás */
 #mangaList {
     list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px; /* Aumentando a distância entre os itens */
+    gap: 15px; /* Reduzindo a distância entre os itens */
+    justify-content: space-evenly;
 }
 
+/* Estilo do item de mangá */
 .mangaItem {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px; /* Tamanho padronizado da capa */
+    width: calc(20% - 15px); /* 20% da largura total com 15px de espaçamento entre os itens */
     text-align: center;
     position: relative;
     transition: background-color 0.3s;
+    margin-bottom: 15px; /* Adicionando margem inferior para espaçamento entre as linhas */
 }
 
+/* Efeito de hover no item de mangá */
 .mangaItem:hover {
     background-color: #f5f5f5;
 }
 
+/* Estilo da imagem do mangá */
 .mangaImage {
     width: 100%;
-    height: 450px; /* Altura fixa para forçar tamanho igual */
-    object-fit: cover; /* Para cobrir completamente o container mantendo as proporções */
+    height: 450px; /* Reduzindo a altura para caber melhor em telas menores */
+    object-fit: cover;
     cursor: pointer;
 }
 
+/* Estilo do texto do mangá */
 .mangaText {
     text-align: left;
-    padding: 20px; /* Aumentando a distância entre os textos */
-    font-size: 16px;
+    padding: 10px;
+    font-size: 14px; /* Reduzindo o tamanho da fonte para caber mais informações */
 }
 
+/* Estilo do item de mangá marcado como lido */
 .mangaItem.read {
-    background-color: #f0f8ff; /* LightBlue - change this color as needed */
+    background-color: #f0f8ff;
 }

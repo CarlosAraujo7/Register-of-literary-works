@@ -5,29 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap"> <!-- Link da fonte 'Kalam' -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap">
+    <!-- Adicionando Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Organizar a Leitura</title>
 </head>
 <body>
 
-    <h1>Site para acompanhar as obras lidas no momento</h1>
+    <header>
+        <h1>Organizar a Leitura</h1>
+    </header>
 
-    <form id="mangaForm">
-        <label for="mangaName">Manga/Manhwa</label>
-        <input type="text" id="mangaName" placeholder="Insira o nome do Mangá/Manhwa" required>
+    <div class="container">
+        <form id="mangaForm" class="form">
+            <label for="mangaName">Mangá/Manhwa</label>
+            <input type="text" id="mangaName" placeholder="Insira o nome do Mangá/Manhwa" required>
 
-        <label for="currentChapter">Capítulo Atual</label>
-        <input type="number" id="currentChapter" placeholder="Insira o capítulo atual" required>
+            <label for="currentChapter">Capítulo Atual</label>
+            <input type="number" id="currentChapter" placeholder="Insira o capítulo atual" required>
 
-        <label for="coverLink">Link da Capa (opcional)</label>
-        <input type="text" id="coverLink" placeholder="Insira o link da capa">
+            <label for="coverLink">Link da Capa</label>
+            <input type="text" id="coverLink" placeholder="Insira o link da capa">
 
-        <button type="button" onclick="addManga()">Adicionar Manga/Manhwa</button>
-    </form>
+            <label for="readLinks">Site para Ler</label>
+            <input type="text" id="readLinks" placeholder="Insira o link para leitura">
 
-    <div id="mangaCounter"></div>
+            <button type="submit" onclick="addManga()">
+                <i class="fas fa-plus"></i> Adicionar Manga/Manhwa
+            </button>
+        </form>
 
-    <ul id="mangaList"></ul>
+        <div id="mangaCounter" class="counter"></div>
+
+        <ul id="mangaList" class="manga-list"></ul>
+    </div>
 
     <script src="script.js"></script>
 </body>
