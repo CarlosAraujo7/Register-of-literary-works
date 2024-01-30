@@ -3,16 +3,19 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 20px;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #f9f9f9; /* Cor de fundo mais clara */
 }
 
 /* Estilo do título principal */
 h1 {
     text-align: center;
-    color: #333;
+    color: #3498db; /* Cor mais clara para o título principal */
     font-family: 'Roboto', sans-serif;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 2em;
 }
+
 
 /* Estilo do formulário de entrada */
 form {
@@ -35,7 +38,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-size: 16px;
-    color: #555;
+    color: #3498db; /* Cor mais clara para os títulos dos campos */
 }
 
 /* Estilo padrão para campos de entrada de texto */
@@ -51,7 +54,7 @@ input, textarea {
 
 /* Estilo do botão padrão */
 button {
-    background-color: #9f9f9f;
+    background-color: #3498db; /* Cor mais clara para o botão principal */
     padding: 12px 20px;
     border: none;
     cursor: pointer;
@@ -62,7 +65,6 @@ button {
     color: white;
 }
 
-/* Efeito de opacidade no hover do botão */
 button:hover {
     opacity: 0.8;
 }
@@ -74,7 +76,7 @@ button:hover {
 }
 
 .updateButton {
-    background-color: #5bc0de;
+    background-color: #29b5e0;
     color: white;
 }
 
@@ -92,13 +94,14 @@ button:hover {
 }
 
 /* Estilo do botão Ordenar por Ordem Alfabética */
+/* Estilo do botão Ordenar por Ordem Alfabética */
 .alphabeticalButton {
-    background-color: #f39c12; /* Cor desejada */
+    background-color: #29b5e0; /* Cor mais clara para o botão de ordenação */
     color: white; /* Cor do texto */
 }
 
 .alphabeticalButton:hover {
-    background-color: #f19500; /* Cor de hover desejada */
+    background-color: #17b0df; /* Cor de hover desejada */
 }
 
 /* Estilo do botão Editar Link para Obra */
@@ -164,6 +167,7 @@ button:hover {
 /* Efeito de hover no item de mangá */
 .mangaItem:hover {
     background-color: #f5f5f5;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adiciona sombra mais pronunciada no hover */
 }
 
 /* Estilo da imagem do mangá */
@@ -178,7 +182,8 @@ button:hover {
 .mangaText {
     text-align: left;
     padding: 10px;
-    font-size: 14px; /* Reduzindo o tamanho da fonte para caber mais informações */
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 /* Estilo do item de mangá marcado como lido */
@@ -188,11 +193,16 @@ button:hover {
 
 /* Adicione isso ao seu estilo CSS para ajustar o posicionamento e o tamanho da caixa de pesquisa */
 #searchContainer {
-    margin-top: 15px; /* Aumenta a distância vertical entre a caixa de pesquisa e os botões */
+    margin-top: 20px; /* Aumenta a distância vertical entre a caixa de pesquisa e os botões */
+    text-align: center; /* Centraliza a caixa de pesquisa */
 }
 
 #searchInput {
-    width: 255px; /* Reduz o tamanho da caixa de pesquisa */
-    padding: 8px; /* Adiciona algum preenchimento interno para melhor aparência */
-    transition: width 0.3s, padding 0.3s;
+    width: 150px; /* Reduz ainda mais o tamanho da caixa de pesquisa */
+    padding: 8px;
+    border: 1px solid #ccc; /* Adiciona uma borda para melhor visualização */
+    border-radius: 5px;
+    font-size: 14px; /* Tamanho da fonte ajustado */
+    text-align: center;
 }
+
