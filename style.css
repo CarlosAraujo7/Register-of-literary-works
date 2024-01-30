@@ -9,7 +9,7 @@ body {
 /* Estilo do título principal */
 h1 {
     text-align: center;
-    color: #3498db; /* Cor mais clara para o título principal */
+    color: #3498DB; /* Cor mais clara para o título principal */
     font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -33,12 +33,62 @@ form {
     transform: scale(1.02);
 }
 
+/* Estilo do formulário de entrada para o modo claro */
+body.light-mode form {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do formulário de entrada para o modo escuro */
+body.dark-mode form {
+    background-color: #16151d;
+    color: #ddd;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo do campo de pesquisa para o modo claro */
+body.light-mode input[type="text"] {
+    border: 1px solid #ccc;
+}
+
+/* Estilo do campo de pesquisa para o modo escuro */
+body.dark-mode input[type="text"] {
+    border: 1px solid #888;
+}
+
+/* Estilo padrão para campos de entrada de texto */
+body.light-mode input,
+body.light-mode textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo das caixas de entrada de texto para o modo escuro */
+body.dark-mode input,
+body.dark-mode textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #555; /* Altere para a cor desejada de cinza escuro */
+    background-color: #e0e0e0; /* Altere para a cor desejada de fundo escuro */
+    color: #ffffff; /* Altere para a cor desejada de texto em fundo escuro */
+    border-radius: 5px;
+}
+
 /* Estilo das etiquetas dos campos de entrada */
 label {
     display: block;
     margin-bottom: 8px;
     font-size: 16px;
-    color: #3498db; /* Cor mais clara para os títulos dos campos */
+    color: #3498DB; /* Cor mais clara para os títulos dos campos */
 }
 
 /* Estilo padrão para campos de entrada de texto */
@@ -94,7 +144,6 @@ button:hover {
 }
 
 /* Estilo do botão Ordenar por Ordem Alfabética */
-/* Estilo do botão Ordenar por Ordem Alfabética */
 .alphabeticalButton {
     background-color: #29b5e0; /* Cor mais clara para o botão de ordenação */
     color: white; /* Cor do texto */
@@ -106,12 +155,12 @@ button:hover {
 
 /* Estilo do botão Editar Link para Obra */
 .editButton {
-    background-color: #5f6f66; /* Cor desejada */
+    background-color: #decd12; /* Cor desejada */
     color: white; /* Cor do texto */
 }
 
 .editButton:hover {
-    background-color: #2a302c; /* Cor de hover desejada */
+    background-color: #f3df08; /* Cor de hover desejada */
 }
 
 /* Estilo do botão Ler */
@@ -138,7 +187,17 @@ button:hover {
 #mangaCounter {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #ddd;
+}
+
+/* Estilo do contador de mangás para o modo claro */
+body.light-mode #mangaCounter {
     color: #333;
+}
+
+/* Estilo do contador de mangás para o modo escuro */
+body.dark-mode #mangaCounter {
+    color: #ddd;
 }
 
 /* Estilo da lista de mangás */
@@ -166,7 +225,7 @@ button:hover {
 
 /* Efeito de hover no item de mangá */
 .mangaItem:hover {
-    background-color: #f5f5f5;
+    background-color: #f5f5f517;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Adiciona sombra mais pronunciada no hover */
 }
 
@@ -198,7 +257,7 @@ button:hover {
 }
 
 #searchInput {
-    width: 150px; /* Reduz ainda mais o tamanho da caixa de pesquisa */
+    width: 290px; /* Reduz ainda mais o tamanho da caixa de pesquisa */
     padding: 8px;
     border: 1px solid #ccc; /* Adiciona uma borda para melhor visualização */
     border-radius: 5px;
@@ -206,3 +265,31 @@ button:hover {
     text-align: center;
 }
 
+/* Adicione isso ao seu estilo CSS */
+body.dark-mode {
+    background-color: #16151D; /* Cor de fundo para o modo escuro */
+    color: #ffffff; /* Cor do texto para o modo escuro */
+}
+/* Adicione isso ao seu estilo CSS */
+#darkModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s; /* Adiciona uma transição suave à propriedade filter */
+}
+
+/* Adicione isso ao seu estilo CSS */
+#lampContainer {
+    text-align: right;
+    margin-top: 20px; /* Adapte conforme necessário */
+}
+
+#lampImage {
+    width: 30px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção original */
+    cursor: pointer;
+}
+
+#organizeButtons{
+    text-align: right;
+}

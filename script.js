@@ -21,6 +21,9 @@ function addManga() {
 
         mangaList.push(manga);
 
+        // Adicione a lógica de ordenação aqui
+        mangaList.sort((a, b) => a.name.localeCompare(b.name));
+
         updateMangaList();
         resetForm();
         saveToLocalStorage();
@@ -30,7 +33,6 @@ function addManga() {
     } else {
         alert("Insira um nome e um capítulo válido.");
     }
-    
 }
 
 function updateMangaList(filteredMangas = mangaList) {
@@ -140,6 +142,47 @@ function organizeByDate() {
     updateMangaList();
 }
 
+let darkMode = false;
+
+function toggleDarkMode() {
+    darkMode = !darkMode;
+    applyDarkMode();
+}
+
+function applyDarkMode() {
+    document.body.classList.add("dark-mode");
+    document.body.classList.remove("light-mode");
+    localStorage.setItem('darkMode', 'true');
+}
+
+function applyLightMode() {
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    localStorage.setItem('darkMode', 'false');
+}
+
+let lampOn = true;
+
+function toggleLamp() {
+    lampOn = !lampOn;
+    applyLampState();
+    if (lampOn) {
+        applyDarkMode(); // Chama applyDarkMode apenas quando a lâmpada está acesa
+    } else {
+        applyLightMode(); // Chama applyLightMode apenas quando a lâmpada está apagada
+    }
+}
+
+function applyLampState() {
+    const lampImage = document.getElementById("lampImage");
+
+    if (lampOn) {
+        lampImage.src = "desligada.png";
+    } else {
+        lampImage.src = "ligada.png";
+    }
+}
+
 function resetForm() {
     document.getElementById("mangaForm").reset();
 }
@@ -151,4 +194,6 @@ function saveToLocalStorage() {
 // Carregar dados do Local Storage ao carregar a página
 window.onload = function () {
     updateMangaList();
+    darkMode = localStorage.getItem('darkMode') === 'true';
+    applyDarkMode();
 };
