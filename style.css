@@ -79,16 +79,56 @@ button:hover {
 }
 
 .updateButton:hover {
-    background-color: #46b8da;
+    background-color: #17b0df;
 }
 
 .deleteButton {
-    background-color: #d9534f;
+    background-color: #d84540;
     color: white;
 }
 
 .deleteButton:hover {
-    background-color: #c9302c;
+    background-color: #dc1a14;
+}
+
+/* Estilo do botão Ordenar por Ordem Alfabética */
+.alphabeticalButton {
+    background-color: #f39c12; /* Cor desejada */
+    color: white; /* Cor do texto */
+}
+
+.alphabeticalButton:hover {
+    background-color: #f19500; /* Cor de hover desejada */
+}
+
+/* Estilo do botão Editar Link para Obra */
+.editButton {
+    background-color: #5f6f66; /* Cor desejada */
+    color: white; /* Cor do texto */
+}
+
+.editButton:hover {
+    background-color: #2a302c; /* Cor de hover desejada */
+}
+
+/* Estilo do botão Ler */
+.readButton {
+    background-color: #12de67; /* Cor desejada */
+    color: white; /* Cor do texto */
+}
+
+.readButton:hover {
+    background-color: #0cea61; /* Cor de hover desejada */
+}
+
+/* Estilo do botão Adicionar Manga/Manhwa */
+.addMangaButton {
+    background-color: #3498db; /* Cor desejada */
+    color: white; /* Cor do texto */
+}
+
+.addMangaButton:hover {
+    background-color: #2980b9; /* Cor de hover desejada */
 }
 
 /* Estilo do contador de mangás */
@@ -118,6 +158,7 @@ button:hover {
     position: relative;
     transition: background-color 0.3s;
     margin-bottom: 15px; /* Adicionando margem inferior para espaçamento entre as linhas */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Efeito de hover no item de mangá */
@@ -143,4 +184,15 @@ button:hover {
 /* Estilo do item de mangá marcado como lido */
 .mangaItem.read {
     background-color: #f0f8ff;
+}
+
+/* Adicione isso ao seu estilo CSS para ajustar o posicionamento e o tamanho da caixa de pesquisa */
+#searchContainer {
+    margin-top: 15px; /* Aumenta a distância vertical entre a caixa de pesquisa e os botões */
+}
+
+#searchInput {
+    width: 255px; /* Reduz o tamanho da caixa de pesquisa */
+    padding: 8px; /* Adiciona algum preenchimento interno para melhor aparência */
+    transition: width 0.3s, padding 0.3s;
 }

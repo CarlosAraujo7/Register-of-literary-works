@@ -33,15 +33,15 @@ function addManga() {
     
 }
 
-function updateMangaList() {
+function updateMangaList(filteredMangas = mangaList) {
     const mangaCounterElement = document.getElementById("mangaCounter");
     const mangaListElement = document.getElementById("mangaList");
 
     mangaCounterElement.innerHTML = `Total de Leituras: ${mangaList.length}`;
-
+    
     mangaListElement.innerHTML = "";
 
-    mangaList.forEach((manga, index) => {
+    filteredMangas.forEach((manga, index) => {
         const mangaItem = document.createElement("li");
         mangaItem.className = `mangaItem ${manga.read ? "read" : ""}`;
 
@@ -65,10 +65,24 @@ function updateMangaList() {
             <button class="mangaButton deleteButton" onclick="deleteManga(${index})">Apagar</button>
         `;
 
+        // Adicionando classes aos botões diretamente
+        const editButton = mangaText.querySelector('.editButton');
+        const readButton = mangaText.querySelector('.readButton');
+
+        editButton.classList.add('yourCustomEditButtonClass'); // Substitua 'yourCustomEditButtonClass' pela classe desejada
+        readButton.classList.add('yourCustomReadButtonClass'); // Substitua 'yourCustomReadButtonClass' pela classe desejada
+
         mangaItem.appendChild(mangaImage);
         mangaItem.appendChild(mangaText);
         mangaListElement.appendChild(mangaItem);
     });
+}
+
+function searchMangas() {
+    const searchInput = document.getElementById("searchInput").value.toLowerCase();
+    const filteredMangas = mangaList.filter(manga => manga.name.toLowerCase().includes(searchInput));
+
+    updateMangaList(filteredMangas);
 }
 
 function updateReadStatus(index) {
@@ -114,6 +128,16 @@ function deleteManga(index) {
         updateMangaList();
         saveToLocalStorage();
     }
+}
+
+function organizeByAlphabet() {
+    mangaList.sort((a, b) => a.name.localeCompare(b.name));
+    updateMangaList();
+}
+
+function organizeByDate() {
+    mangaList.sort((a, b) => new Date(b.lastModified) - new Date(a.lastModified));
+    updateMangaList();
 }
 
 function resetForm() {

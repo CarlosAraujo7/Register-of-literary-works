@@ -30,12 +30,20 @@
             <label for="readLinks">Site para Ler</label>
             <input type="text" id="readLinks" placeholder="Insira o link para leitura">
 
-            <button type="button" onclick="addManga()">
+            <button type="button" onclick="addManga()" class="addMangaButton">
                 <i class="fas fa-plus"></i> Adicionar Manga/Manhwa
-            </button>            
+            </button>                       
         </form>
 
         <div id="mangaCounter" class="counter"></div>
+        
+        <div id="organizeButtons">
+            <button onclick="organizeByAlphabet()" class="alphabeticalButton">Ordenar por Ordem Alfabética</button>
+        </div>        
+        
+        <div id="searchContainer">
+            <input type="text" id="searchInput" oninput="searchMangas()" placeholder="Pesquisar obras">
+        </div>
 
         <ul id="mangaList" class="manga-list"></ul>
     </div>
