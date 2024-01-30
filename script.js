@@ -61,7 +61,7 @@ function updateMangaList(filteredMangas = mangaList) {
             <span>Data da última modificação: ${manga.lastModified}</span><br>
             <button class="mangaButton updateButton" onclick="updateChapter(${index})">Atualizar Capítulo</button>
             <div class="buttonContainer">
-                <button class="mangaButton editButton" onclick="editSiteToRead(${index})">Editar Link da Obra</button>
+                <button class="mangaButton editButton" onclick="editSiteToRead(${index})">Editar</button>
                 <button class="mangaButton readButton" onclick="redirectToSite(${index})">Ler</button>
             </div>
             <button class="mangaButton deleteButton" onclick="deleteManga(${index})">Apagar</button>
@@ -79,6 +79,7 @@ function updateMangaList(filteredMangas = mangaList) {
         mangaListElement.appendChild(mangaItem);
     });
 }
+
 
 function searchMangas() {
     const searchInput = document.getElementById("searchInput").value.toLowerCase();

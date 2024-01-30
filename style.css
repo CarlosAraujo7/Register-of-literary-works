@@ -125,6 +125,19 @@ button:hover {
     margin-top: 10px;
 }
 
+/* Estilos específicos para botões de editar e ler */
+.buttonContainer {
+    display: flex;
+    justify-content: space-between; /* Distribui os botões ao longo da linha */
+    width: calc(101%); /* Garante que os botões ocupem toda a largura com 20px de espaçamento nas extremidades */
+    margin: 2px; /* Adiciona um espaçamento externo aos botões */
+}
+
+.editButton, .readButton {
+    width: 49%; /* Define a largura para que ambos os botões ocupem 48% da largura total */
+    height: 42px;
+}
+
 .updateButton {
     background-color: #29b5e0;
     color: white;
@@ -215,12 +228,12 @@ body.dark-mode #mangaCounter {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    width: calc(20% - 15px); /* 20% da largura total com 15px de espaçamento entre os itens */
+    width: calc(16% - 10px); /* 20% da largura total com 15px de espaçamento entre os itens */
     text-align: center;
     position: relative;
     transition: background-color 0.3s;
     margin-bottom: 15px; /* Adicionando margem inferior para espaçamento entre as linhas */
-    transition: background-color 0.3s, transform 0.3s;
+    height: 630px;
 }
 
 /* Efeito de hover no item de mangá */
@@ -232,7 +245,7 @@ body.dark-mode #mangaCounter {
 /* Estilo da imagem do mangá */
 .mangaImage {
     width: 100%;
-    height: 450px; /* Reduzindo a altura para caber melhor em telas menores */
+    height: 350px; /* Reduzindo a altura para caber melhor em telas menores */
     object-fit: cover;
     cursor: pointer;
 }
@@ -240,9 +253,17 @@ body.dark-mode #mangaCounter {
 /* Estilo do texto do mangá */
 .mangaText {
     text-align: left;
-    padding: 10px;
+    padding: 15px;
     font-size: 14px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.mangaText strong {
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Define o número máximo de linhas para 2 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 5px; /* Adiciona um espaçamento mínimo na parte inferior do texto */
 }
 
 /* Estilo do item de mangá marcado como lido */
