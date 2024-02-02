@@ -16,7 +16,6 @@ h1 {
     font-size: 2em;
 }
 
-
 /* Estilo do formulário de entrada */
 form {
     margin-bottom: 20px;
@@ -313,4 +312,160 @@ body.dark-mode {
 
 #organizeButtons{
     text-align: right;
+}
+
+/* Adicione isto ao seu arquivo CSS */
+.cancelButton {
+    background-color: #d84540; /* Cor desejada para o botão cancelar */
+    color: white;
+    margin-top: 10px;
+}
+
+.cancelButton:hover {
+    background-color: #dc1a14;
+}
+
+/* Estilo para a tela de edição */
+.edit-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Garante que a tela de edição fique acima do elemento de sobreposição */
+    backdrop-filter: blur(2px);
+    background-color: #0000004a;
+}
+
+/* Estilo para o elemento de sobreposição */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Garante que o elemento de sobreposição fique abaixo da tela de edição */
+    display: none; /* Inicialmente escondido */
+}
+
+/* Adicione isto ao seu arquivo CSS */
+#updateChapterContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* Garante que a tela de atualização de capítulo fique acima do elemento de sobreposição */
+    backdrop-filter: blur(2px);
+    background-color: #0000004a;
+}
+
+/* Estilos específicos para o tema escuro na tela de atualização de capítulo */
+body.dark #updateChapterContainer {
+    background: rgba(0, 0, 0, 0.8); /* Fundo preto semi-transparente para o tema escuro */
+}
+
+/* Adicione isto ao seu arquivo CSS */
+#updateChapterContainer form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 300px; /* Ajuste a largura desejada para o formulário */
+    max-height: 250px; /* Ajuste a altura máxima desejada para o formulário */
+    overflow-y: auto; /* Adiciona rolagem vertical caso o conteúdo ultrapasse a altura máxima */
+}
+
+/* Estilos específicos para o tema escuro na tela de atualização de capítulo */
+body.dark #updateChapterContainer form {
+    background: #444;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Adicione isto ao seu arquivo CSS */
+#confirmationContainer form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 350zpx; /* Ajuste a largura desejada para o formulário */
+    max-height: 250px; /* Ajuste a altura máxima desejada para o formulário */
+}
+
+/* Estilos específicos para o tema escuro na tela de confirmação */
+body.dark #confirmationContainer form {
+    background: #444;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Adicione isto ao seu arquivo CSS */
+#confirmationContainer form .cancelButton {
+    background-color: #d84540; /* Cor vermelha para o botão Cancelar */
+    color: white;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Efeito de opacidade no hover do botão Cancelar */
+#confirmationContainer form .cancelButton:hover {
+    opacity: 0.8;
+    background-color: #dc1a14;
+}
+
+/* Estilos específicos para o tema escuro no botão Cancelar */
+body.dark #confirmationContainer form .cancelButton {
+    background-color: #d84540;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.confirmation-message {
+    display: none;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #5cb85c; /* Cor verde para sucesso */
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 3; /* Garante que a mensagem de confirmação fique acima dos outros elementos */
+}
+
+body.dark .confirmation-message {
+    background-color: #155724; /* Cor verde escura para modo escuro */
+}
+
+/* Adicione isto ao seu arquivo CSS */
+.error-message {
+    display: none;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #d9534f; /* Cor vermelha para erro */
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 3; /* Garante que a mensagem de erro fique acima dos outros elementos */
+}
+
+body.dark .error-message {
+    background-color: #721c24; /* Cor vermelha escura para modo escuro */
 }

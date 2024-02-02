@@ -38,7 +38,7 @@
             </button>
          
         </form>
-
+        
         <div id="mangaCounter" class="counter"></div>
         
         <div id="organizeButtons">
@@ -53,8 +53,28 @@
 
         <ul id="mangaList" class="manga-list"></ul>
     </div>
-
     
+    <div id="editContainer" class="edit-container"></div>
+    <div id="updateChapterContainer" class="edit-container"></div>
+    <div id="overlay"></div>
+
+    <div id="successMessage" class="confirmation-message">
+        Mangá/Manhwa cadastrado com sucesso!
+    </div>
+    <div id="errorMessage" class="error-message">
+        Por favor, insira um nome e um capítulo válidos.
+    </div>
+
+    <div id="confirmationContainer" class="edit-container">
+        <form>
+            <p>Tem certeza que deseja apagar esta obra?</p>
+            <div class="buttonContainer">
+                <button id="confirmButton" type="button">Confirmar</button>
+                <button id="cancelButton" type="button" class="cancelButton">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
