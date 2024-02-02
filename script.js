@@ -105,15 +105,26 @@ function updateChapter(index) {
 }
 
 function editSiteToRead(index) {
-    const currentSiteToRead = mangaList[index].siteToRead;
-    const newSiteToRead = prompt("Insira o novo link para leitura:", currentSiteToRead);
+    const currentManga = mangaList[index];
+    const currentName = currentManga.name;
+    const currentSiteToRead = currentManga.siteToRead;
+    const currentCoverLink = currentManga.cover;
 
-    if (newSiteToRead !== null) {
+    const newName = prompt("Insira o novo nome da obra:", currentName);
+    const newCoverLink = prompt("Insira o novo link da capa:", currentCoverLink);
+    const newSiteToRead = prompt("Insira o novo link para leitura:", currentSiteToRead);
+    
+    if (newName !== null && newSiteToRead !== null && newCoverLink !== null) {
+        mangaList[index].name = newName.trim();
         mangaList[index].siteToRead = newSiteToRead.trim();
+        mangaList[index].cover = newCoverLink.trim();
+        mangaList[index].lastModified = new Date().toLocaleString();
+
         updateMangaList();
         saveToLocalStorage();
     }
 }
+
 
 function redirectToSite(index) {
     const siteToRead = mangaList[index].siteToRead;
