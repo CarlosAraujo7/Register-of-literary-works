@@ -42,7 +42,7 @@ body.light-mode form {
 
 /* Estilo do formulário de entrada para o modo escuro */
 body.dark-mode form {
-    background-color: #16151d;
+    background-color: #1e1e27;
     color: #ddd;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
