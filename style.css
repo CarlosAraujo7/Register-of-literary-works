@@ -79,7 +79,7 @@ body.dark-mode textarea {
     font-size: 16px;
     border: 1px solid #555; /* Altere para a cor desejada de cinza escuro */
     background-color: #e0e0e0; /* Altere para a cor desejada de fundo escuro */
-    color: #ffffff; /* Altere para a cor desejada de texto em fundo escuro */
+    color: #282828; /* Altere para a cor desejada de texto em fundo escuro */
     border-radius: 5px;
 }
 
