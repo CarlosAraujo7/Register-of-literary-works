@@ -162,11 +162,11 @@ function editSiteToRead(index) {
         <label for="editName">Novo Nome da Obra:</label>
         <input type="text" id="editName" value="${currentManga.name}" required>
 
-        <label for="editSiteToRead">Novo Link para Leitura:</label>
-        <input type="text" id="editSiteToRead" value="${currentManga.siteToRead}" required>
-
         <label for="editCoverLink">Novo Link da Capa:</label>
         <input type="text" id="editCoverLink" value="${currentManga.cover || ''}">
+
+        <label for="editSiteToRead">Novo Link para Leitura:</label>
+        <input type="text" id="editSiteToRead" value="${currentManga.siteToRead}" required>
 
         <button type="button" onclick="submitEditForm(${index})">Salvar Edições</button>
         <button type="button" class="cancelButton" onclick="cancelEdit()">Cancelar</button>
