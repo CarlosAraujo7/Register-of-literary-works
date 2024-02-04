@@ -394,7 +394,7 @@ body.dark #updateChapterContainer form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    width: 350zpx; /* Ajuste a largura desejada para o formulário */
+    width: 350px; /* Ajuste a largura desejada para o formulário */
     max-height: 250px; /* Ajuste a altura máxima desejada para o formulário */
 }
 
@@ -468,4 +468,50 @@ body.dark .confirmation-message {
 
 body.dark .error-message {
     background-color: #721c24; /* Cor vermelha escura para modo escuro */
+}
+
+.statusBalloon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #3498db;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.statusLabel {
+    font-weight: bold;
+}
+
+/* Adicione isso ao seu arquivo CSS */
+.statusBalloon.status-em-andamento {
+    background-color: #3498db; /* Cor de fundo para 'Em andamento' */
+}
+
+.statusBalloon.status-hiato {
+    background-color: #decd12; /* Cor de fundo para 'Hiato' */
+}
+
+.statusBalloon.status-completo {
+    background-color: #12de67; /* Cor de fundo para 'Completo' */
+}
+
+/* Adicione ao seu arquivo CSS */
+.statusSelect {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Cor de fundo para o modo claro */
+    color: #333; /* Cor do texto para o modo claro */
+}
+
+body.dark-mode .statusSelect {
+    background-color: #e0e0e0; /* Cor de fundo para o modo escuro */
+    color: #282828; /* Cor do texto para o modo escuro */
 }
