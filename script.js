@@ -16,9 +16,8 @@ function addManga() {
             cover: coverLink,
             lastModified: new Date().toLocaleString(),
             siteToRead: siteToRead,
-            read: false,
-            status: "Em andamento" // Adicione essa linha
-        };        
+            read: false
+        };
 
         mangaList.push(manga);
 
@@ -82,19 +81,6 @@ function updateMangaList(filteredMangas = mangaList) {
             <button class="mangaButton deleteButton" onclick="deleteManga(${index})">Apagar</button>
         `;
 
-        const mangaStatus = document.createElement("span");
-        mangaStatus.className = "statusLabel";
-        mangaStatus.innerText = manga.status;
-
-        const mangaStatusBalloon = document.createElement("span");
-        mangaStatusBalloon.className = `statusBalloon status-${getCSSFriendlyStatus(manga.status)}`;
-        mangaStatusBalloon.appendChild(mangaStatus);
-
-        mangaItem.appendChild(mangaStatusBalloon);
-        mangaItem.appendChild(mangaImage);
-        mangaItem.appendChild(mangaText);
-        mangaListElement.appendChild(mangaItem);
-
         // Adicionando classes aos botões diretamente
         const editButton = mangaText.querySelector('.editButton');
         const readButton = mangaText.querySelector('.readButton');
@@ -108,9 +94,7 @@ function updateMangaList(filteredMangas = mangaList) {
     });
 }
 
-function getCSSFriendlyStatus(status) {
-    return status.toLowerCase().replace(/\s/g, '-');
-}
+
 function searchMangas() {
     const searchInput = document.getElementById("searchInput").value.toLowerCase();
     const filteredMangas = mangaList.filter(manga => manga.name.toLowerCase().includes(searchInput));
@@ -168,6 +152,7 @@ function cancelUpdateChapter() {
     document.getElementById("overlay").style.display = "none";
 }
 
+
 function editSiteToRead(index) {
     const currentManga = mangaList[index];
 
@@ -176,20 +161,13 @@ function editSiteToRead(index) {
     editForm.innerHTML = `
         <label for="editName">Novo Nome da Obra:</label>
         <input type="text" id="editName" value="${currentManga.name}" required>
-    
+
         <label for="editCoverLink">Novo Link da Capa:</label>
         <input type="text" id="editCoverLink" value="${currentManga.cover || ''}">
-    
+
         <label for="editSiteToRead">Novo Link para Leitura:</label>
         <input type="text" id="editSiteToRead" value="${currentManga.siteToRead}" required>
-    
-        <label for="editStatus">Status:</label>
-        <select id="editStatus" class="statusSelect" required>
-            <option value="Em andamento" ${currentManga.status === 'Em andamento' ? 'selected' : ''}>Em andamento</option>
-            <option value="Hiato" ${currentManga.status === 'Hiato' ? 'selected' : ''}>Hiato</option>
-            <option value="Completo" ${currentManga.status === 'Completo' ? 'selected' : ''}>Completo</option>
-        </select>
-    
+
         <button type="button" onclick="submitEditForm(${index})">Salvar Edições</button>
         <button type="button" class="cancelButton" onclick="cancelEdit()">Cancelar</button>
     `;
@@ -217,13 +195,11 @@ function submitEditForm(index) {
     const newName = document.getElementById("editName").value.trim();
     const newSiteToRead = document.getElementById("editSiteToRead").value.trim();
     const newCoverLink = document.getElementById("editCoverLink").value.trim();
-    const newStatus = document.getElementById("editStatus").value; // Adiciona esta linha
 
     if (newName && newSiteToRead) {
         mangaList[index].name = newName;
         mangaList[index].siteToRead = newSiteToRead;
         mangaList[index].cover = newCoverLink;
-        mangaList[index].status = newStatus; // Atualiza o status
         mangaList[index].lastModified = new Date().toLocaleString();
 
         updateMangaList();
