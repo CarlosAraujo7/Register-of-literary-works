@@ -232,7 +232,7 @@ body.dark-mode #mangaCounter {
     position: relative;
     transition: background-color 0.3s;
     margin-bottom: 15px; /* Adicionando margem inferior para espaçamento entre as linhas */
-    height: 630px;
+    height: 730px;
 }
 
 /* Efeito de hover no item de mangá */
@@ -244,7 +244,7 @@ body.dark-mode #mangaCounter {
 /* Estilo da imagem do mangá */
 .mangaImage {
     width: 100%;
-    height: 350px; /* Reduzindo a altura para caber melhor em telas menores */
+    height: 450px; /* Reduzindo a altura para caber melhor em telas menores */
     object-fit: cover;
     cursor: pointer;
 }
